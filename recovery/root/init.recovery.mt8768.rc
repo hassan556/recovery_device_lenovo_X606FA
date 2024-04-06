@@ -26,7 +26,6 @@
 #
 
 on init
-    write /sys/class/leds/lcd-backlight/brightness 255
     export ANDROID_ROOT /system_root
 
 on fs
@@ -78,16 +77,3 @@ on property:twrp.decrypt.done=true
     stop gatekeeper-1-0
     stop keymaster-4-0-bp
     stop teei_daemon
-
-service init-recovery-mt6765-sh /init.recovery.mt6765.sh
-    user root
-    group root
-    seclabel u:r:recovery:s0
-        
-on post-fs-data
-    start setup_fake_cache
-    wait_for_prop twrp.datamount.done 1
-
-service setup_fake_cache /bin/sh /setup_fake_cache.sh
-    disabled
-    oneshot
