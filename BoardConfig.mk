@@ -38,7 +38,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Kernel
 # change kernel name, depending on which device you are building for
-BOARD_KERNEL_IMAGE_NAME := x606fa_zImage
+BOARD_KERNEL_IMAGE_NAME := x606v_zImage
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
